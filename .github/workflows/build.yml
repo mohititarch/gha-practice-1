@@ -1,0 +1,17 @@
+name: build and deploy
+on: push
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GetCodes
+      uses: actions/checkout@v3
+    - name: InstallS/w
+      uses: actions/setup-node@v3
+        with:
+          node-version: 18
+    - name: Install Dependnecies
+      run: npm ci
+    - name: Lint
+      run: npm run lint
