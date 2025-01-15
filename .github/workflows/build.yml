@@ -30,4 +30,4 @@ jobs:
     - name: Test
       run: npm run test
     - name: Details
-      run: ${{ toJSON(github)}}
+      run: ${{ toJSON(github.event) }}
